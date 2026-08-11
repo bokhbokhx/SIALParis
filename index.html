@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة باريس 2026 | بالتزامن مع معرض سيال باريس | جمعية ملاك المطاعم والمقاهي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16294A; --navy-deep:#0B1830; --gold:#C9A227; --gold-soft:#E7CB7B;
+    --cream:#FAF6EC; --cream-2:#F1E8D6; --ink:#1E2430; --slate:#5B6472;
+    --red:#A6342A; --line: rgba(30,36,48,.13); --radius: 3px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--ink); font-family:'IBM Plex Sans Arabic', sans-serif; line-height:1.75; font-size:16px;}
+  .num{font-family:'Cairo', sans-serif; font-weight:800;}
+  h1,h2,h3{font-family:'Cairo', sans-serif; font-weight:800;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:.12em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--gold);}
+  .eyebrow.on-photo{color:var(--gold-soft);}
+  .eyebrow.on-photo::before{background:var(--gold-soft);}
+
+  /* NAV */
+  .topbar{position:sticky; top:0; z-index:50; background:rgba(250,246,236,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{font-family:'Cairo'; font-weight:900; font-size:16px; color:var(--navy);}
+  .brand small{display:block; font-family:'IBM Plex Sans Arabic'; font-weight:500; font-size:11px; color:var(--slate); letter-spacing:.02em;}
+  nav.links{display:flex; gap:16px; font-size:13px; font-weight:600; flex-wrap:wrap;}
+  nav.links a{color:var(--ink); opacity:.75; padding:6px 0; border-bottom:2px solid transparent; transition:.2s;}
+  nav.links a:hover{opacity:1; border-color:var(--gold);}
+  .navtoggle{display:none; background:none; border:1px solid var(--line); border-radius:var(--radius); padding:8px 12px; font-size:20px; color:var(--navy);}
+  @media(max-width:1040px){
+    nav.links{display:none;}
+    .navtoggle{display:block;}
+    nav.links.open{display:flex; flex-direction:column; position:absolute; top:64px; right:0; left:0; background:var(--cream); border-bottom:1px solid var(--line); padding:14px 24px; gap:4px; max-height:75vh; overflow:auto;}
+  }
+
+  /* PHOTO SECTION */
+  .photo-section{position:relative; background-size:cover; background-position:center; color:#fff; padding:96px 0;}
+  .photo-section::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,24,48,.90) 0%, rgba(11,24,48,.68) 45%, rgba(11,24,48,.94) 100%);}
+  .photo-section .wrap{position:relative;}
+  .photo-section.short{padding:66px 0;}
+
+  .hero h1{font-family:'Cairo'; font-weight:900; font-size:clamp(30px,5vw,44px); line-height:1.3; color:#fff;}
+  .hero .big-year{font-family:'Cairo'; font-weight:900; font-size:clamp(56px,11vw,108px); line-height:1; color:var(--gold-soft); margin-top:6px; letter-spacing:.02em;}
+  .hero .sub{font-size:clamp(16px,2.4vw,20px); font-weight:700; color:rgba(250,246,236,.92); margin-top:10px;}
+  .hero p.lead{max-width:640px; margin-top:20px; font-size:16px; color:rgba(250,246,236,.85);}
+  .hero .meta{display:flex; flex-wrap:wrap; gap:14px; margin-top:32px;}
+  .chip{border:1px solid rgba(231,203,123,.45); border-radius:100px; padding:9px 18px; font-size:13.5px; font-weight:600; display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.06);}
+  .chip b{color:var(--gold-soft); font-weight:800;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:700; font-size:14px; cursor:pointer; border:1px solid transparent; transition:.2s;}
+  .btn-gold{background:var(--gold-soft); color:var(--navy-deep);}
+  .btn-gold:hover{background:#fff;}
+  .btn-ghost{border-color:rgba(250,246,236,.4); color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);}
+  .btn-line{border-color:var(--line); color:var(--ink);}
+  .btn-line:hover{border-color:var(--navy); color:var(--navy);}
+
+  /* PARTNER STRIP */
+  .partner-strip{background:#fff; border-bottom:1px solid var(--line); padding:22px 0;}
+  .partner-strip .wrap{display:flex; align-items:center; justify-content:center; gap:56px; flex-wrap:wrap;}
+  .partner-strip img{height:52px; width:auto; object-fit:contain; filter:grayscale(0%);}
+  .partner-strip .plabel{font-size:11px; color:var(--slate); font-weight:700; letter-spacing:.06em; margin-top:6px; text-align:center;}
+  .partner-item{text-align:center;}
+
+  section{padding:76px 0;}
+  section.alt{background:var(--cream-2);}
+  .section-head{max-width:660px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(24px,3vw,32px); color:var(--navy);}
+  .section-head.on-photo h2{color:#fff;}
+  .section-head p{color:#3d4552; margin-top:10px; font-size:15px;}
+  .section-head.on-photo p{color:rgba(250,246,236,.85);}
+  .divider{height:1px; background-image:repeating-linear-gradient(to left, var(--gold) 0 6px, transparent 6px 14px); margin:56px 0;}
+
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .stat{padding:28px 20px; border-inline-start:1px solid var(--line); background:#fff;}
+  .stat:first-child{border-inline-start:none;}
+  .stat .n{font-size:44px; color:var(--navy); font-weight:900; line-height:1;}
+  .stat .l{font-size:12.5px; color:var(--slate); margin-top:8px; font-weight:600;}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr);} .stat:nth-child(3){border-inline-start:none;} .stat .n{font-size:34px;}}
+
+  .about-flex{display:flex; gap:36px; align-items:center; flex-wrap:wrap;}
+  .about-flex .txt{flex:1.3; min-width:280px;}
+  .about-flex .img{flex:1; min-width:240px; border-radius:var(--radius); overflow:hidden; box-shadow:0 12px 32px rgba(11,24,48,.18);}
+  .about-flex p{font-size:15.5px; color:#3a4048;}
+
+  .guests{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  @media(max-width:760px){.guests{grid-template-columns:1fr;}}
+  .guest-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .guest-card .photo{width:100%; height:230px; object-fit:cover; object-position:top center;}
+  .guest-card .body{padding:28px 26px;}
+  .guest-card .role{font-size:12px; letter-spacing:.08em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px;}
+  .guest-card h3{font-size:21px; color:var(--navy);}
+  .guest-card .title{font-size:13.5px; color:#4a4f57; margin-top:6px; font-weight:600;}
+  .guest-card ul.cred{margin-top:16px; padding-inline-start:18px; font-size:14px; color:#3a4048;}
+  .guest-card ul.cred li{margin-bottom:7px;}
+
+  .numlist{list-style:none; counter-reset:num;}
+  .numlist li{counter-increment:num; display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .numlist li:last-child{border-bottom:none;}
+  .numlist li::before{content:counter(num, decimal-leading-zero); font-family:'Cairo'; font-weight:900; font-size:24px; color:var(--gold); flex:0 0 auto; width:44px;}
+  .numlist .t{font-size:14.5px; color:#3a4048; padding-top:4px;}
+  .numlist li.highlight{background:var(--cream-2); border-radius:var(--radius); padding:16px 14px;}
+  .numlist li.highlight .t{font-weight:700; color:var(--navy);}
+
+  /* participants sample */
+  .sample-frame{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff;}
+  .sample-frame img{width:100%;}
+  .sample-caption{font-size:12.5px; color:var(--slate); text-align:center; padding:14px; border-top:1px dashed var(--line);}
+  .live-wall{margin-top:28px;}
+  .participants{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;}
+  .p-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:16px; text-align:center;}
+  .p-card .av{width:44px; height:44px; border-radius:50%; margin:0 auto 10px; background:linear-gradient(135deg,var(--gold-soft),var(--gold)); display:flex; align-items:center; justify-content:center; font-family:'Cairo'; font-weight:800; color:var(--navy-deep); font-size:15px;}
+  .p-card .nm{font-size:13.5px; font-weight:700; color:var(--navy);}
+  .p-card .co{font-size:11.5px; color:var(--slate); margin-top:2px;}
+  .empty-note{font-size:13.5px; color:var(--slate); border:1px dashed var(--line); border-radius:var(--radius); padding:20px; text-align:center;}
+
+  /* program */
+  .program{border-inline-start:2px solid var(--line); margin-inline-start:8px;}
+  .day{position:relative; padding:0 0 46px 0; padding-inline-start:32px;}
+  .day::before{content:attr(data-day); position:absolute; right:-9px; top:0; transform:translateX(50%); width:18px; height:18px; border-radius:50%; background:var(--navy); border:3px solid var(--cream);}
+  .day .date{font-size:12.5px; color:var(--gold); font-weight:800; letter-spacing:.05em;}
+  .day h4{font-size:19px; margin-top:4px; color:var(--navy);}
+  .day-info{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+  .badge{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; padding:7px 12px; border-radius:100px; background:var(--cream-2); color:var(--navy); border:1px solid var(--line);}
+  .badge.salah{background:#fff;}
+  .day ul{margin-top:14px; padding-inline-start:18px; color:#3a4048; font-size:14.5px;}
+  .day li{margin-bottom:5px;}
+  .salah-row{display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--slate); margin-top:8px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:10px 14px;}
+  .salah-row b{color:var(--navy); font-family:'Cairo'; font-weight:800;}
+
+  .info-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  @media(max-width:760px){.info-grid{grid-template-columns:1fr;}}
+  .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px;}
+  .card h3{font-size:16px; color:var(--navy); margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+  .weather-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed var(--line); font-size:14px;}
+  .weather-row:last-child{border-bottom:none;}
+  .weather-row b{font-family:'Cairo'; font-weight:800; font-size:16px; color:var(--navy);}
+
+  .visa-cost{display:flex; gap:20px; flex-wrap:wrap; margin-top:6px;}
+  .cost-box{flex:1; min-width:180px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+  .cost-box .amt{font-size:32px; color:var(--navy); font-weight:900;}
+  .cost-box .lbl{font-size:13px; color:var(--slate); font-weight:600; margin-top:4px;}
+  .doclist{list-style:none; margin-top:18px;}
+  .doclist li{display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); font-size:14.5px; align-items:flex-start;}
+  .doclist li::before{content:"—"; color:var(--gold); font-weight:800;}
+  .note-box{background:var(--navy); color:var(--cream); border-radius:var(--radius); padding:20px 24px; margin-top:22px; font-size:14px;}
+  .note-box b{color:var(--gold-soft);}
+
+  /* hotel gallery */
+  .hotel-gallery{display:grid; grid-template-columns:1.4fr 1fr; grid-template-rows:1fr 1fr; gap:12px; height:420px; border-radius:var(--radius); overflow:hidden;}
+  .hotel-gallery img{width:100%; height:100%; object-fit:cover;}
+  .hotel-gallery .main{grid-row:1/3;}
+  @media(max-width:760px){.hotel-gallery{grid-template-columns:1fr; height:auto;} .hotel-gallery .main{grid-row:auto; height:260px;} .hotel-gallery img{height:180px;}}
+  .hotel-detail{margin-top:22px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px; display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between;}
+  .hotel-detail h4{font-size:19px; color:var(--navy);}
+  .hotel-detail .addr{font-size:13.5px; color:#4a4f57; margin-top:4px;}
+  .hotel-detail .rating{font-size:13px; color:var(--gold); font-weight:700; margin-top:6px;}
+
+  .flight-form{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; background:#fff; border:1px solid var(--line); padding:24px; border-radius:var(--radius);}
+  @media(max-width:760px){.flight-form{grid-template-columns:1fr 1fr;}}
+  .flight-form label{font-size:12.5px; font-weight:700; color:var(--slate); display:block; margin-bottom:6px;}
+  .flight-form select, .flight-form input{width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit; font-size:14px; background:var(--cream);}
+  .flight-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+
+  /* package pricing */
+  .pkg-card{background:var(--navy); color:var(--cream); border-radius:var(--radius); padding:40px; display:flex; flex-wrap:wrap; gap:36px; align-items:center; justify-content:space-between;}
+  .pkg-price{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+  .pkg-price .old{font-family:'Cairo'; font-weight:800; font-size:26px; color:rgba(250,246,236,.55); text-decoration:line-through; text-decoration-color:var(--red); text-decoration-thickness:3px;}
+  .pkg-price .new{font-family:'Cairo'; font-weight:900; font-size:52px; color:var(--gold-soft);}
+  .pkg-price .cur{font-size:16px; font-weight:700; color:var(--gold-soft);}
+  .pkg-deadline{font-size:13px; color:rgba(250,246,236,.75); margin-top:8px;}
+  .pkg-list{list-style:none; font-size:14px;}
+  .pkg-list li{padding:6px 0; display:flex; gap:8px;}
+  .pkg-list li::before{content:"✓"; color:var(--gold-soft); font-weight:900;}
+  .pkg-excl{margin-top:14px; font-size:12.5px; color:rgba(250,246,236,.65);}
+
+  .aside-card{background:var(--navy); color:var(--cream); border-radius:var(--radius); padding:30px;}
+  .aside-card h3{font-size:19px; margin-bottom:14px; color:#fff;}
+
+  .conv{display:flex; gap:14px; align-items:end; flex-wrap:wrap; background:#fff; border:1px solid var(--line); padding:22px; border-radius:var(--radius);}
+  .conv .field{flex:1; min-width:130px;}
+  .conv label{font-size:12px; font-weight:700; color:var(--slate); display:block; margin-bottom:6px;}
+  .conv input{width:100%; padding:10px; border:1px solid var(--line); border-radius:var(--radius); font-size:15px; background:var(--cream);}
+
+  .reg-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:40px;}
+  @media(max-width:860px){.reg-wrap{grid-template-columns:1fr;}}
+  form.reg{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:30px; display:grid; gap:16px;}
+  form.reg input{padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit; font-size:14.5px; background:var(--cream);}
+  form.reg label{font-size:13px; font-weight:700; color:var(--slate); margin-bottom:6px; display:block;}
+  .reg-status{margin-top:10px; font-size:13.5px; color:var(--slate); min-height:18px;}
+
+  .admin-toggle{position:fixed; bottom:20px; left:20px; z-index:60;}
+  .admin-toggle button{background:var(--navy-deep); color:var(--gold-soft); border:none; border-radius:100px; padding:11px 18px; font-size:12.5px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.25);}
+  .admin-panel{display:none; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px; margin-top:20px;}
+  .admin-panel.open{display:block;}
+  table.reg-table{width:100%; border-collapse:collapse; font-size:13.5px; margin-top:14px;}
+  table.reg-table th, table.reg-table td{border-bottom:1px solid var(--line); padding:9px 8px; text-align:right;}
+  table.reg-table th{color:var(--slate); font-size:12px;}
+
+  .venue-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  @media(max-width:760px){.venue-grid{grid-template-columns:1fr;}}
+  .venue-card{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22); border-radius:var(--radius); padding:22px; backdrop-filter:blur(4px);}
+  .venue-card h4{font-size:16px; color:#fff; margin-bottom:6px;}
+  .venue-card p{font-size:13.5px; color:rgba(250,246,236,.82);}
+  .venue-card .k{font-size:11px; letter-spacing:.06em; color:var(--gold-soft); font-weight:700; text-transform:uppercase; margin-bottom:6px; display:block;}
+
+  /* sponsors */
+  .sponsor-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media(max-width:760px){.sponsor-grid{grid-template-columns:1fr 1fr;}}
+  .sponsor-box{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:30px 20px; text-align:center; position:relative; overflow:hidden;}
+  .sponsor-box img{max-height:56px; width:auto; margin:0 auto; filter:blur(1.4px) grayscale(15%); opacity:.82;}
+  .sponsor-box .tag{margin-top:14px; font-size:11px; letter-spacing:.06em; color:var(--slate); font-weight:700; text-transform:uppercase;}
+
+  footer{background:var(--navy-deep); color:rgba(250,246,236,.7); padding:44px 0; font-size:13px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;}
+  footer b{color:var(--gold-soft);}
+
+  ::selection{background:var(--gold-soft); color:var(--navy-deep);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">جمعية ملاك المطاعم والمقاهي<small>رحلة باريس 2026 · SIAL Paris</small></div>
+    <nav class="links" id="navLinks">
+      <a href="#about">عن الرحلة</a>
+      <a href="#exhibition">المعرض</a>
+      <a href="#guests">الضيوف</a>
+      <a href="#participants">المشاركون</a>
+      <a href="#program">البرنامج</a>
+      <a href="#visa">التأشيرة</a>
+      <a href="#taste">مطاعم ومقاهي</a>
+      <a href="#tourism">الوجهات</a>
+      <a href="#stay">الفندق</a>
+      <a href="#package">الباقة</a>
+      <a href="#register">التسجيل</a>
+    </nav>
+    <button class="navtoggle" id="navToggle">☰</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="photo-section hero" style="background-image:url('assets/paris-hero-sunset.jpg');">
+  <div class="wrap">
+    <div class="eyebrow on-photo">رحلة معرفية · جمعية ملاك المطاعم والمقاهي</div>
+    <h1>رحلة باريس</h1>
+    <div class="big-year">2026</div>
+    <div class="sub">بالتزامن مع معرض سيال باريس</div>
+    <p class="lead">برنامج معرفي يجمع أكبر معرض عالمي لابتكار الأغذية والمشروبات، بلقاء الزملاء، وتبادل الخبرات مع الشركات والعلامات العالمية في قلب باريس.</p>
+    <div class="meta">
+      <div class="chip">🗓️ <b>16–21 أكتوبر 2026</b></div>
+      <div class="chip">📍 Paris Nord Villepinte</div>
+      <div class="chip">🇫🇷 يتطلب تأشيرة شنغن</div>
+    </div>
+    <div class="cta-row">
+      <button class="btn btn-gold" onclick="document.getElementById('register').scrollIntoView()">سجّل اهتمامك</button>
+      <button class="btn btn-ghost" id="icsBtn">إضافة إلى التقويم</button>
+      <a class="btn btn-ghost" href="#package">تفاصيل الباقة والسعر ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER STRIP -->
+<div class="partner-strip">
+  <div class="wrap">
+    <div class="partner-item"><img src="assets/logo-rcoa.png" alt="جمعية ملاك المطاعم والمقاهي"></div>
+    <div class="partner-item"><img src="assets/logo-banan.jpg" alt="بنان"></div>
+    <div class="partner-item"><img src="assets/logo-sial.jpg" alt="SIAL Paris"></div>
+  </div>
+</div>
+
+<!-- ABOUT THE TRIP -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-flex">
+      <div class="txt">
+        <div class="eyebrow">رحلة باريس</div>
+        <h2 style="font-size:clamp(24px,3vw,32px); color:var(--navy); margin-bottom:16px;">لماذا فرنسا ولماذا الآن</h2>
+        <p>
+          تُعد فرنسا من أعرق الدول وأبرز الأسواق المؤثرة عالميًا في مجالات الضيافة والمطاعم والمقاهي، خاصة في فنون المخبوزات والحلويات والمعجنات، وابتكار تجارب تناول الطعام، إلى جانب كونها موطنًا لعلامات تجارية رائدة في القهوة والشوكولاتة والضيافة الفندقية. تمثّل رحلة باريس بالتزامن مع معرض سيال باريس فرصة ذهبية لاستكشاف أسواق جديدة، وبناء شراكات مع أشهر الشركات الفرنسية والعالمية، إضافة إلى التعرف على أحدث التوجهات والتقنيات وتبادل الخبرات العملية مع رواد القطاع من أصحاب المشاريع الفرنسية الناجحة.
+        </p>
+      </div>
+      <div class="img"><img src="assets/paris-arc-de-triomphe.jpg" alt="قوس النصر - باريس"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXHIBITION -->
+<section class="photo-section short" id="exhibition" style="background-image:url('assets/paris-aerial.jpeg');">
+  <div class="wrap">
+    <div class="section-head on-photo">
+      <div class="eyebrow on-photo">عن المعرض</div>
+      <h2>SIAL Paris — أكبر منصة عالمية لابتكار الأغذية</h2>
+      <p>مناسبة تقام كل عامين منذ عام 1964، وتُعد المرجع العالمي الأول لصناعة الأغذية والمشروبات، وتجمع مصنّعين وموردين وموزعين ومطاعم وعلامات من مختلف قارات العالم تحت سقف واحد في Paris Nord Villepinte.</p>
+    </div>
+    <div class="stats" style="border-color:rgba(255,255,255,.25);">
+      <div class="stat" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2);"><div class="n" style="color:var(--gold-soft)">7,500+</div><div class="l" style="color:rgba(250,246,236,.8)">شركة عارضة</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2);"><div class="n" style="color:var(--gold-soft)">120+</div><div class="l" style="color:rgba(250,246,236,.8)">دولة مشاركة</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2);"><div class="n" style="color:var(--gold-soft)">310,000</div><div class="l" style="color:rgba(250,246,236,.8)">زائر مهني متوقع</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2);"><div class="n" style="color:var(--gold-soft)">5</div><div class="l" style="color:rgba(250,246,236,.8)">أيام في Paris Nord Villepinte</div></div>
+    </div>
+    <div class="info-grid" style="margin-top:28px;">
+      <div class="card" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.22); backdrop-filter:blur(4px);">
+        <h3 style="color:#fff;">📅 التواريخ والموقع</h3>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>أيام المعرض</span><b style="color:var(--gold-soft)">17–21 أكتوبر 2026</b></div>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>مكان الانعقاد</span><b style="color:var(--gold-soft)">Paris Nord Villepinte</b></div>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>العنوان</span><b style="font-size:13px; color:var(--gold-soft)">82 Avenue des Nations, 93420 Villepinte</b></div>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>الجهة المنظمة</span><b style="font-size:14px; color:var(--gold-soft)">Comexposium</b></div>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.22); backdrop-filter:blur(4px);">
+        <h3 style="color:#fff;">🍽️ محاور المعرض</h3>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>القهوة والمخبوزات</span><span>الأغذية النباتية والمستدامة</span></div>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>الأغذية المجمدة والمصنّعة</span><span>المشروبات والعصائر</span></div>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>التعبئة والتغليف</span><span>الحلول التقنية والرقمية</span></div>
+        <div class="weather-row" style="border-color:rgba(255,255,255,.2); color:rgba(250,246,236,.9);"><span>الامتياز التجاري</span><span>خدمات الضيافة والتموين</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANCE / VALUE OF THE VISIT -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">أهمية المشاركة</div>
+      <h2>ما الذي يمكن تحقيقه من الزيارة</h2>
+    </div>
+    <ol class="numlist">
+      <li class="highlight"><div class="t"><b>بناء العلاقات وتبادل الخبرات بين ملاك المطاعم والمقاهي الحاضرين في الرحلة:</b> الرحلة بحد ذاتها فرصة لتقوية الشبكة المهنية بين أعضاء الجمعية أنفسهم، عبر أيام مشتركة من النقاش وتبادل التجارب داخل الوفد الواحد.</div></li>
+      <li><div class="t"><b>الاستفادة من الابتكارات وأحدث أساليب التشغيل:</b> الاطلاع على تجارب الأغذية والمشروبات الفرنسية، وابتكاراتها في تقديم الخدمة وتطوير القوائم، والاستفادة من الدروس التطبيقية وربطها بأعضاء الجمعية.</div></li>
+      <li><div class="t"><b>مقابلة صناع القرار وممثلي كبرى الشركات الدولية:</b> بناء علاقات مباشرة مع العلامات والموردين العالميين الحاضرين في المعرض.</div></li>
+      <li><div class="t"><b>استكشاف فرص استثمارية وشراكات استراتيجية:</b> تعزّز من تنافسية المشاركين وتفتح قنوات تعاون جديدة في السوق الأوروبي.</div></li>
+      <li><div class="t"><b>الإلمام باتجاهات العملاء وتفضيلات المستهلك الأوروبي والعالمي:</b> فهم أعمق لتوجهات الاستهلاك الغذائي والمشروبات في الأسواق الناضجة.</div></li>
+      <li><div class="t"><b>اكتشاف موردين جدد من مختلف دول العالم:</b> يجمع المعرض عارضين من أكثر من 120 دولة تحت سقف واحد.</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- GUESTS -->
+<section id="guests">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">وفد الجمعية</div>
+      <h2>الضيوف</h2>
+    </div>
+    <div class="guests">
+      <div class="guest-card">
+        <img class="photo" src="assets/guest-ibrahim.jpeg" alt="إبراهيم العميقان">
+        <div class="body">
+          <div class="role">ضيف الشرف</div>
+          <h3>إبراهيم العميقان</h3>
+          <div class="title">الرئيس التنفيذي ونائب رئيس مجلس إدارة شركة نفوذ الغذائية (مامولا، عنبة، قشطية، توب 100)</div>
+          <ul class="cred">
+            <li>قاد شركة نفوذ للمنتجات الغذائية من مشروع ناشئ عام 2015 إلى شركة مساهمة مدرجة في السوق المالية السعودية.</li>
+            <li>يشرف على محفظة من العلامات الرائدة في قطاع المأكولات الخفيفة والحلويات، أبرزها مامولا وعنبة وقشطية وتوب 100.</li>
+            <li>عضو مجلس إدارة في عدد من الجهات، من بينها الشركة الوطنية للتنمية الزراعية (نادك).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="guest-card">
+        <img class="photo" src="assets/guest-mohammed.jpg" alt="د. محمد الحميزي">
+        <div class="body">
+          <div class="role">قائد الوفد</div>
+          <h3>د. محمد الحميزي</h3>
+          <div class="title">ممثل شركة بنان وجمعية ملاك المطاعم والمقاهي</div>
+          <ul class="cred">
+            <li>يمثّل شركة بنان المتخصصة في تصميم وتنفيذ المطاعم والمقاهي.</li>
+            <li>يمثّل جمعية ملاك المطاعم والمقاهي، ويقود تنسيق الوفد وبرنامج الرحلة.</li>
+            <li>يتولى التنسيق الميداني والتواصل مع الجهات والشركاء طوال أيام البرنامج.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPANTS -->
+<section class="alt" id="participants">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">المشاركون</div>
+      <h2>المشاركون في رحلة باريس</h2>
+      <p>نموذج مبدئي يوضح شكل عرض المشاركين، وسيتم تحديثه بصور وأسماء وعلامات المشاركين الفعليين في رحلة باريس فور اكتمال التسجيل.</p>
+    </div>
+    <div class="sample-frame">
+      <img src="assets/participants-sample.png" alt="نموذج مبدئي للمشاركين">
+      <div class="sample-caption">نموذج مبدئي — سيتم استبداله بصور وعلامات المشاركين الفعليين في رحلة باريس</div>
+    </div>
+    <div class="live-wall">
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:14px;">👥 المسجلون حتى الآن</h3>
+      <div class="participants" id="participantsWall">
+        <div class="empty-note">لا يوجد مشاركون مسجّلون بعد — كن أول من يسجّل من قسم "التسجيل" أدناه.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">البرنامج المقترح</div>
+      <h2>جدول الرحلة</h2>
+      <p>برنامج مبدئي يدمج زيارات المعرض واللقاءات المهنية والجلسات المعرفية على مدار 6 أيام، قابل للتعديل بحسب أجندة اللقاءات الرسمية. الطقس مبني على المعدلات الموسمية التاريخية لمنتصف أكتوبر، ومواقيت الصلاة تقديرية بحسب رابطة العالم الإسلامي — يُنصح بالتأكد منها عبر تطبيق محلي عند الوصول.</p>
+    </div>
+    <div class="program">
+
+      <div class="day" data-day="1">
+        <div class="date">الجمعة 16 أكتوبر</div>
+        <h4>الوصول إلى باريس</h4>
+        <div class="day-info">
+          <span class="badge">🌡️ 16° / 9° — جزئي غائم، احتمال أمطار خفيفة — سترة خفيفة ومظلة</span>
+        </div>
+        <ul>
+          <li>الوصول عبر مطار شارل ديغول (CDG) وتسجيل الدخول في الفندق</li>
+          <li>عشاء ترحيبي وجلسة تعارف بين أعضاء الوفد، وإحاطة عن أهداف الرحلة وجدول الأيام القادمة</li>
+        </ul>
+        <div class="salah-row"><b>مواقيت الصلاة:</b> الفجر 06:32 · الظهر 13:48 · العصر 16:32 · المغرب 19:14 · العشاء 20:49</div>
+      </div>
+
+      <div class="day" data-day="2">
+        <div class="date">السبت 17 أكتوبر</div>
+        <h4>افتتاح المعرض · قهوة وتجربة الضيف</h4>
+        <div class="day-info">
+          <span class="badge">🌡️ 15° / 8° — غائم جزئيًا — معطف متوسط</span>
+        </div>
+        <ul>
+          <li>فطور جماعي وتبادل حديث حول أهداف اليوم</li>
+          <li>زيارة المعرض في يوم الافتتاح، وجولة استكشافية على الأجنحة الرئيسية</li>
+          <li>غداء في منطقة المعرض</li>
+          <li>جلسة قهوة عصرية مفتوحة مع ضيف الشرف إبراهيم العميقان، للحديث عن تجربته وقصة نفوذ ومامولا وعنبة</li>
+          <li>عشاء جماعي ونقاش حر حول ملاحظات اليوم</li>
+        </ul>
+        <div class="salah-row"><b>مواقيت الصلاة:</b> الفجر 06:33 · الظهر 13:47 · العصر 16:30 · المغرب 19:12 · العشاء 20:47</div>
+      </div>
+
+      <div class="day" data-day="3">
+        <div class="date">الأحد 18 أكتوبر</div>
+        <h4>زيارة السفارة السعودية</h4>
+        <div class="day-info">
+          <span class="badge">🌡️ 17° / 10° — مشمس جزئيًا — سترة خفيفة</span>
+        </div>
+        <ul>
+          <li>فطور جماعي</li>
+          <li>زيارة المعرض ومتابعة اللقاءات الثنائية مع العارضين</li>
+          <li>غداء جماعي</li>
+          <li>زيارة السفارة السعودية في باريس ولقاء مع المسؤولين هناك</li>
+          <li>عشاء جماعي وتلخيص ملاحظات اليوم</li>
+        </ul>
+        <div class="salah-row"><b>مواقيت الصلاة:</b> الفجر 06:35 · الظهر 13:47 · العصر 16:28 · المغرب 19:09 · العشاء 20:44</div>
+      </div>
+
+      <div class="day" data-day="4">
+        <div class="date">الاثنين 19 أكتوبر</div>
+        <h4>الملحق التجاري · تجربة زميل</h4>
+        <div class="day-info">
+          <span class="badge">🌡️ 14° / 8° — احتمال أمطار — معطف واقٍ من المطر ومظلة</span>
+        </div>
+        <ul>
+          <li>فطور جماعي</li>
+          <li>زيارة المعرض، وزيارة أجنحة التقنية والتغليف والحلول التشغيلية</li>
+          <li>غداء جماعي</li>
+          <li>زيارة الملحق التجاري السعودي في باريس</li>
+          <li>عشاء جماعي — جلسة "تجربة زميل": أحد أعضاء الوفد يشارك قصته وتجربته المهنية</li>
+        </ul>
+        <div class="salah-row"><b>مواقيت الصلاة:</b> الفجر 06:37 · الظهر 13:47 · العصر 16:26 · المغرب 19:07 · العشاء 20:42</div>
+      </div>
+
+      <div class="day" data-day="5">
+        <div class="date">الثلاثاء 20 أكتوبر</div>
+        <h4>زيارة مطعم فرنسي وقصته</h4>
+        <div class="day-info">
+          <span class="badge">🌡️ 16° / 9° — غائم جزئيًا — معطف متوسط</span>
+        </div>
+        <ul>
+          <li>فطور جماعي</li>
+          <li>زيارة المعرض في يومه قبل الأخير</li>
+          <li>غداء وزيارة ميدانية لأحد المطاعم الفرنسية المعروفة، والتعرف على قصته وتجربته عن قرب مع فريق العمل</li>
+          <li>عشاء ختامي وجلسة تلخيص لربط مشاهدات الرحلة بفرص التطبيق في السوق السعودي</li>
+        </ul>
+        <div class="salah-row"><b>مواقيت الصلاة:</b> الفجر 06:38 · الظهر 13:46 · العصر 16:24 · المغرب 19:05 · العشاء 20:39</div>
+      </div>
+
+      <div class="day" data-day="6">
+        <div class="date">الأربعاء 21 أكتوبر</div>
+        <h4>المغادرة</h4>
+        <div class="day-info">
+          <span class="badge">🌡️ 15° / 8° — صافٍ جزئيًا — سترة خفيفة</span>
+        </div>
+        <ul>
+          <li>فطور جماعي</li>
+          <li>الخروج من الفندق، والتوجه إلى مطار شارل ديغول</li>
+          <li>السفر</li>
+        </ul>
+        <div class="salah-row"><b>مواقيت الصلاة:</b> الفجر 06:40 · الظهر 13:46 · العصر 16:22 · المغرب 19:02 · العشاء 20:37</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISA -->
+<section class="alt" id="visa">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">متطلبات السفر</div>
+      <h2>تأشيرة شنغن الفرنسية</h2>
+      <p>يحتاج حاملو الجواز السعودي إلى تأشيرة شنغن قصيرة المدة لدخول فرنسا. فيما يلي أبرز المعلومات والتكاليف التقديرية لتنظيم الميزانية والجدول الزمني — ينسّق كل مشارك تأشيرته وتذاكره بنفسه.</p>
+    </div>
+    <div class="visa-cost">
+      <div class="cost-box"><div class="amt">90 €</div><div class="lbl">الرسوم الحكومية للبالغين — تعادل تقريبًا 355–400 ريال</div></div>
+      <div class="cost-box"><div class="amt">+</div><div class="lbl">رسوم خدمة إضافية لمركز VFS Global (متغيرة، تُدفع عند التقديم)</div></div>
+      <div class="cost-box"><div class="amt">15–30</div><div class="lbl">يوم عمل تقريبًا لصدور التأشيرة بعد استيفاء الطلب</div></div>
+    </div>
+    <div class="divider"></div>
+    <div class="info-grid">
+      <div class="card">
+        <h3>📋 المستندات الأساسية المطلوبة</h3>
+        <ul class="doclist">
+          <li>جواز سفر ساري لمدة 6 أشهر على الأقل بعد تاريخ العودة، مع صفحتين فارغتين</li>
+          <li>صورة شخصية حديثة بمواصفات الشنغن</li>
+          <li>نموذج طلب التأشيرة معبّأ وموقّع</li>
+          <li>تأمين سفر شنغن يغطي حد أدنى 30,000 يورو لكامل مدة الرحلة</li>
+          <li>حجز فندقي مؤكد للإقامة في باريس</li>
+          <li>حجز تذاكر طيران (ذهاب وعودة)</li>
+          <li>كشف حساب بنكي لآخر 3 أشهر وإثبات الملاءة المالية</li>
+          <li>خطاب دعوة أو تسجيل حضور من فعالية سيال باريس (لأغراض الأعمال)</li>
+          <li>خطاب من جمعية ملاك المطاعم والمقاهي يوضح الغرض من السفر وصفة المشارك</li>
+          <li>البصمة الحيوية (Biometrics) عند التقديم — صالحة لمدة 59 شهرًا لمن سبق له التسجيل</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>⏱️ التوقيت المقترح</h3>
+        <div class="weather-row"><span>موسم الذروة</span><span>التقديم قبل 8–10 أسابيع من السفر</span></div>
+        <div class="weather-row"><span>المواسم العادية</span><span>التقديم قبل 4–6 أسابيع</span></div>
+        <div class="weather-row"><span>جهة التقديم</span><span>مركز VFS Global لطلبات التأشيرة الفرنسية في السعودية</span></div>
+        <div class="weather-row"><span>مكان التقديم الشخصي</span><span>إلزامي لأخذ البصمة عند أول طلب</span></div>
+      </div>
+    </div>
+    <div class="note-box"><b>ملاحظة:</b> تأشيرة الشنغن تتيح التنقل الحر بين كل دول منطقة الشنغن (27 دولة)، وليست مقصورة على فرنسا وحدها. التذاكر والتأشيرة ينسّقها كل مشارك بنفسه، ويُنصح بحجز موعد VFS مبكرًا نظرًا للإقبال المرتفع في موسم الخريف والمعارض.</div>
+  </div>
+</section>
+
+<!-- RESTAURANTS -->
+<section class="photo-section short" id="taste" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Alliance%20Bakery%20Macarons%2C%20December%202010.jpg');">
+  <div class="wrap">
+    <div class="section-head on-photo">
+      <div class="eyebrow on-photo">الغداء والعشاء</div>
+      <h2>المطاعم المقترحة</h2>
+      <p>مطاعم مميزة تأخذكم لعيش تجربة استثنائية في المطبخ الفرنسي، بعضها حاصل على جوائز عالمية مثل نجمة ميشلان.</p>
+    </div>
+    <div class="venue-grid">
+      <div class="venue-card"><span class="k">مأكولات فرنسية راقية</span><h4>Le Jules Verne</h4><p>مطعم حاصل على نجمة ميشلان داخل برج إيفل، بإطلالة بانورامية على باريس.</p></div>
+      <div class="venue-card"><span class="k">مطبخ فرنسي كلاسيكي</span><h4>L'Ambroisie</h4><p>من أعرق المطاعم الحائزة على 3 نجوم ميشلان في قلب مارييه.</p></div>
+      <div class="venue-card"><span class="k">تجربة الشيف</span><h4>Guy Savoy</h4><p>تجربة فاخرة على ضفاف نهر السين بتوقيع أحد أبرز طهاة فرنسا.</p></div>
+      <div class="venue-card"><span class="k">مطبخ عصري مبتكر</span><h4>Alléno Paris</h4><p>مطبخ فرنسي معاصر يعيد تفسير الأطباق التقليدية بلمسة ابتكارية.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAFES -->
+<section class="photo-section short" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20de%20Flore.jpg');">
+  <div class="wrap">
+    <div class="section-head on-photo">
+      <div class="eyebrow on-photo">استراحات القهوة</div>
+      <h2>المقاهي المقترحة</h2>
+    </div>
+    <div class="venue-grid">
+      <div class="venue-card"><span class="k">مقهى تاريخي</span><h4>Café de Flore</h4><p>أحد أعرق مقاهي باريس في سان جيرمان، وملتقى المفكرين والأدباء تاريخيًا.</p></div>
+      <div class="venue-card"><span class="k">مقهى تاريخي</span><h4>Les Deux Magots</h4><p>مقهى كلاسيكي مجاور لكافيه دو فلور، بأجواء أدبية مميزة.</p></div>
+      <div class="venue-card"><span class="k">تجربة حلويات</span><h4>Angelina</h4><p>يشتهر بالشوكولاتة الساخنة الفرنسية الفاخرة وحلوى Mont-Blanc.</p></div>
+      <div class="venue-card"><span class="k">تجربة المعجنات</span><h4>Ladurée</h4><p>من أبرز علامات المكرون الفرنسي الفاخر، بفروع تاريخية في باريس.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOURISM -->
+<section class="photo-section short" id="tourism" style="background-image:url('assets/paris-arc-de-triomphe.jpg');">
+  <div class="wrap">
+    <div class="section-head on-photo">
+      <div class="eyebrow on-photo">الوجهات السياحية والثقافية</div>
+      <h2>الوجهات المقترحة</h2>
+    </div>
+    <div class="venue-grid">
+      <div class="venue-card"><span class="k">01</span><h4>برج إيفل</h4><p>رمز باريس الأشهر، مع إمكانية العشاء أو الصعود لإطلالة بانورامية مسائية.</p></div>
+      <div class="venue-card"><span class="k">02</span><h4>متحف اللوفر</h4><p>أكبر متحف فني في العالم، ويضم لوحة الموناليزا وآلاف القطع الأثرية.</p></div>
+      <div class="venue-card"><span class="k">03</span><h4>قوس النصر والشانزليزيه</h4><p>نزهة على أشهر شارع تسوق في باريس تنتهي عند قوس النصر التاريخي.</p></div>
+      <div class="venue-card"><span class="k">04</span><h4>مونمارتر وكاتدرائية ساكريه كور</h4><p>حي فني وثقافي على تلة مطلة على المدينة، بأجواء بوهيمية مميزة.</p></div>
+      <div class="venue-card"><span class="k">05</span><h4>نهر السين</h4><p>جولة نهرية مسائية تمر بأبرز معالم باريس المضاءة.</p></div>
+      <div class="venue-card"><span class="k">06</span><h4>زيارة محمصة قهوة أو مصنع شوكولاتة</h4><p>تجربة معرفية ميدانية تكمّل أهداف الرحلة المهنية.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTEL -->
+<section id="stay">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الإقامة</div>
+      <h2>الفندق المقترح</h2>
+    </div>
+    <div class="hotel-gallery">
+      <img class="main" src="assets/hotel-1.jpeg" alt="Golden Tulip Villepinte - الواجهة">
+      <img src="assets/hotel-3.jpg" alt="Golden Tulip Villepinte - غرفة">
+      <img src="assets/hotel-4.jpg" alt="Golden Tulip Villepinte - جناح">
+    </div>
+    <div class="hotel-detail">
+      <div>
+        <h4>Golden Tulip Villepinte Roissy – Parc Des Expositions</h4>
+        <div class="addr">53 Av. des Nations, 93420 Villepinte, France</div>
+        <div class="rating">★ 4.1 — على بعد دقائق سيرًا من صالات المعرض، و10–15 دقيقة من مطار شارل ديغول</div>
+      </div>
+      <a class="btn btn-line" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Golden+Tulip+Villepinte+Roissy+Parc+Des+Expositions">فتح في خرائط Google ↗</a>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="font-size:16px; color:var(--navy); margin-bottom:14px;">✈️ البحث عن رحلات الطيران</h3>
+    <div class="flight-form">
+      <div><label>مدينة المغادرة</label>
+        <select id="depCity">
+          <option value="JED">جدة – JED</option>
+          <option value="RUH">الرياض – RUH</option>
+          <option value="DMM">الدمام – DMM</option>
+        </select>
+      </div>
+      <div><label>الوجهة</label>
+        <select id="arrCity"><option value="CDG" selected>باريس – مطار شارل ديغول CDG</option></select>
+      </div>
+      <div><label>تاريخ المغادرة</label><input type="date" id="depDate" value="2026-10-16"></div>
+      <div><label>تاريخ العودة</label><input type="date" id="retDate" value="2026-10-21"></div>
+    </div>
+    <div class="flight-actions">
+      <button class="btn btn-line" onclick="searchFlights('google')">🔎 البحث في Google Flights</button>
+      <button class="btn btn-line" onclick="searchFlights('sky')">🔎 البحث في Skyscanner</button>
+    </div>
+    <div class="divider"></div>
+    <h3 style="font-size:16px; color:var(--navy); margin-bottom:14px;">€ محول اليورو والريال السعودي (تقريبي)</h3>
+    <div class="conv">
+      <div class="field"><label>يورو (EUR)</label><input type="number" id="eur" value="100" oninput="convert('eur')"></div>
+      <div class="field"><label>ريال سعودي (SAR)</label><input type="number" id="sar" value="406" oninput="convert('sar')"></div>
+      <div style="font-size:12px; color:var(--slate); flex-basis:100%;">سعر تقريبي 1 يورو ≈ 4.06 ريال — للاطلاع فقط، يرجى التحقق من السعر الفعلي عند التحويل.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGE -->
+<section class="alt" id="package">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">التسجيل</div>
+      <h2>باقة المشاركة</h2>
+    </div>
+    <div class="pkg-card">
+      <div>
+        <div class="pkg-price">
+          <span class="old">23,000 SAR</span>
+          <span class="new">17,000</span>
+          <span class="cur">ريال سعودي</span>
+        </div>
+        <div class="pkg-deadline">سعر التسجيل المبكر — ساري حتى 20 سبتمبر 2026</div>
+        <ul class="pkg-list" style="margin-top:20px;">
+          <li>الإقامة الفندقية طوال أيام البرنامج</li>
+          <li>الإفطار والعشاء يوميًا</li>
+          <li>التنقلات الداخلية في باريس</li>
+          <li>البرنامج المهني والمعرفي الكامل</li>
+          <li>الترجمة والتنسيق الميداني</li>
+        </ul>
+        <div class="pkg-excl">* تذاكر الطيران وتأشيرة الشنغن غير مشمولة، وينسّقها كل مشارك بنفسه.</div>
+      </div>
+      <button class="btn btn-gold" onclick="document.getElementById('register').scrollIntoView()">سجّل الآن</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ASSOCIATION -->
+<section id="association">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">تعرف على الجمعية</div>
+      <h2>جمعية ملاك المطاعم والمقاهي</h2>
+    </div>
+    <p style="max-width:820px; font-size:15px; color:#3a4048;">
+      جمعية ملاك المطاعم والمقاهي هي جمعية أهلية غير ربحية مرخّصة (ترخيص رقم 5109)، تُعنى بتمثيل وتمكين منشآت قطاع الضيافة في المملكة العربية السعودية. تهدف الجمعية إلى تطوير بيئة الأعمال، وتمكين رواد القطاع من خلال المبادرات النوعية، وبناء الشراكات، وتقديم الحلول، بما يسهم في نمو القطاع واستدامته وتحقيق مستهدفات رؤية السعودية 2030.
+    </p>
+    <div class="stats" style="margin-top:28px;">
+      <div class="stat"><div class="n">6,500+</div><div class="l">مالك ومستثمر عضو</div></div>
+      <div class="stat"><div class="n">10,000+</div><div class="l">علامة تجارية</div></div>
+      <div class="stat"><div class="n">20,000+</div><div class="l">فرع على مستوى المملكة</div></div>
+      <div class="stat"><div class="n">100,000+</div><div class="l">موظف في القطاع</div></div>
+    </div>
+    <p style="font-size:12.5px; color:var(--slate); margin-top:14px;">تغطي عضوية الجمعية أكثر من 40 مدينة سعودية.</p>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section class="alt" id="sponsors">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الرعاية</div>
+      <h2>الجهات الراعية للرحلة</h2>
+      <p>شركاء ورعاة قيد التأكيد للرحلة.</p>
+    </div>
+    <div class="sponsor-grid">
+      <div class="sponsor-box"><img src="assets/logo-sol.webp" alt="Sol"><div class="tag">قيد التأكيد</div></div>
+      <div class="sponsor-box"><img src="assets/logo-mawashi.webp" alt="مواشي"><div class="tag">قيد التأكيد</div></div>
+      <div class="sponsor-box"><img src="assets/logo-jahez.webp" alt="Jahez"><div class="tag">قيد التأكيد</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION -->
+<section id="register">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">التسجيل والتواصل</div>
+      <h2>سجّل اهتمامك بالمشاركة</h2>
+      <p>سجّل بياناتك الأساسية وسنتواصل معك لاستكمال تفاصيل المشاركة في رحلة باريس.</p>
+    </div>
+    <div class="reg-wrap">
+      <form class="reg" id="regForm">
+        <div><label>الاسم</label><input required id="rName" placeholder="الاسم الكامل"></div>
+        <div><label>المنشأة أو الشركة</label><input id="rCompany" placeholder="اسم المنشأة"></div>
+        <div><label>المدينة</label><input id="rCity" placeholder="المدينة"></div>
+        <div><label>رقم الجوال</label><input required id="rPhone" placeholder="05XXXXXXXX"></div>
+        <button type="submit" class="btn btn-gold" style="justify-content:center;">إرسال التسجيل</button>
+        <div class="reg-status" id="regStatus"></div>
+      </form>
+      <div class="aside-card">
+        <h3>الباقة تشمل</h3>
+        <ul class="pkg-list">
+          <li>الإقامة طوال مدة البرنامج</li>
+          <li>الإفطار والعشاء يوميًا</li>
+          <li>التنقلات الداخلية في باريس</li>
+          <li>برنامج اللقاءات المهنية والمعرفية</li>
+          <li>الترجمة والتنسيق الميداني</li>
+        </ul>
+        <p style="font-size:12.5px; margin-top:16px; opacity:.75;">التأشيرة وتذاكر الطيران ينسّقها كل مشارك بنفسه.</p>
+      </div>
+    </div>
+    <div class="admin-panel" id="adminPanel">
+      <h3 style="color:var(--navy); font-size:16px;">👥 المسجلون (وضع الإدارة)</h3>
+      <table class="reg-table">
+        <thead><tr><th>الاسم</th><th>المنشأة</th><th>المدينة</th><th>الجوال</th><th>التاريخ</th></tr></thead>
+        <tbody id="regTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>جمعية ملاك المطاعم والمقاهي — رحلة باريس 2026 بالتزامن مع معرض سيال باريس</div>
+    <div>16–21 أكتوبر 2026 · Paris Nord Villepinte</div>
+  </div>
+</footer>
+
+<div class="admin-toggle"><button id="adminBtn">وضع الإدارة</button></div>
+
+<script>
+  document.getElementById('navToggle').onclick = () => document.getElementById('navLinks').classList.toggle('open');
+
+  const RATE = 4.06;
+  function convert(from){
+    const eur = document.getElementById('eur'); const sar = document.getElementById('sar');
+    if(from === 'eur'){ sar.value = (parseFloat(eur.value||0) * RATE).toFixed(2); }
+    else { eur.value = (parseFloat(sar.value||0) / RATE).toFixed(2); }
+  }
+
+  function searchFlights(provider){
+    const dep = document.getElementById('depCity').value;
+    const arr = document.getElementById('arrCity').value;
+    const depDate = document.getElementById('depDate').value;
+    const retDate = document.getElementById('retDate').value;
+    let url;
+    if(provider === 'google'){
+      url = `https://www.google.com/travel/flights?q=Flights%20from%20${dep}%20to%20${arr}%20on%20${depDate}%20through%20${retDate}`;
+    } else {
+      const fmt = d => d.replace(/-/g,'').slice(2);
+      url = `https://www.skyscanner.net/transport/flights/${dep.toLowerCase()}/${arr.toLowerCase()}/${fmt(depDate)}/${fmt(retDate)}/`;
+    }
+    window.open(url, '_blank');
+  }
+
+  document.getElementById('icsBtn').onclick = () => {
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',
+      'SUMMARY:رحلة باريس 2026 - معرض سيال باريس',
+      'DTSTART;VALUE=DATE:20261016','DTEND;VALUE=DATE:20261022',
+      'LOCATION:Paris Nord Villepinte\\, 82 Avenue des Nations\\, 93420 Villepinte\\, France',
+      'DESCRIPTION:رحلة جمعية ملاك المطاعم والمقاهي بالتزامن مع معرض سيال باريس 2026',
+      'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const blob = new Blob([ics], {type:'text/calendar'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'paris-trip-2026.ics'; a.click();
+  };
+
+  async function loadRegistrations(){
+    try{ const list = await window.storage.get('sial-registrations', true); return list ? JSON.parse(list.value) : []; }
+    catch(e){ return []; }
+  }
+  async function saveRegistrations(arr){ await window.storage.set('sial-registrations', JSON.stringify(arr), true); }
+
+  function initials(name){
+    const parts = name.trim().split(/\s+/);
+    return (parts[0]?.[0] || '') + (parts[1]?.[0] || '');
+  }
+
+  async function renderParticipantsWall(){
+    const wall = document.getElementById('participantsWall');
+    const list = await loadRegistrations();
+    if(!list.length){ wall.innerHTML = '<div class="empty-note">لا يوجد مشاركون مسجّلون بعد — كن أول من يسجّل من قسم "التسجيل" أدناه.</div>'; return; }
+    wall.innerHTML = list.map(r => `<div class="p-card"><div class="av">${initials(r.name)}</div><div class="nm">${r.name}</div><div class="co">${r.company||''}</div></div>`).join('');
+  }
+
+  document.getElementById('regForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('regStatus');
+    status.textContent = 'جارٍ الإرسال...';
+    try{
+      const entry = { name: document.getElementById('rName').value, company: document.getElementById('rCompany').value,
+        city: document.getElementById('rCity').value, phone: document.getElementById('rPhone').value, date: new Date().toLocaleDateString('en-GB') };
+      const list = await loadRegistrations(); list.push(entry); await saveRegistrations(list);
+      status.textContent = 'تم تسجيل بياناتك بنجاح، سنتواصل معك قريبًا.';
+      e.target.reset();
+      renderAdminTable(); renderParticipantsWall();
+    }catch(err){ status.textContent = 'تعذر إرسال البيانات، يرجى المحاولة مرة أخرى.'; }
+  });
+
+  async function renderAdminTable(){
+    const body = document.getElementById('regTableBody');
+    const list = await loadRegistrations();
+    body.innerHTML = list.map(r => `<tr><td>${r.name}</td><td>${r.company||'—'}</td><td>${r.city||'—'}</td><td>${r.phone}</td><td>${r.date}</td></tr>`).join('') || '<tr><td colspan="5">لا يوجد مسجلون بعد.</td></tr>';
+  }
+
+  document.getElementById('adminBtn').onclick = () => {
+    const panel = document.getElementById('adminPanel');
+    panel.classList.toggle('open');
+    if(panel.classList.contains('open')) renderAdminTable();
+  };
+
+  renderParticipantsWall();
+</script>
+</body>
+</html>
